@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Mentor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="auth-container">
+      <!-- Login Form -->
+      <div id="loginForm" class="auth-form">
+        <h2>Login to AI Mentor</h2>
+        <form id="loginFormSubmit">
+          <div class="input-group">
+            <input type="email" id="loginEmail" placeholder="Email" required />
+          </div>
+          <div class="input-group">
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <button type="submit" class="submit-btn">Login</button>
+        </form>
+        <div class="toggle-form">
+          <a href="#" onclick="toggleForm('register')"
+            >Don't have an account? Register</a
+          >
+        </div>
+      </div>
+
+      <!-- Register Form -->
+      <div id="registerForm" class="auth-form" style="display: none">
+        <h2>Create Account</h2>
+        <form id="registerFormSubmit">
+          <div class="input-group">
+            <input type="text" id="regName" placeholder="Full Name" required />
+          </div>
+          <div class="input-group">
+            <input type="email" id="regEmail" placeholder="Email" required />
+          </div>
+          <div class="input-group">
+            <input
+              type="password"
+              id="regPassword"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <select id="regRole" required>
+              <option value="">Select Role</option>
+              <option value="student">Student</option>
+              <option value="educator">Educator</option>
+            </select>
+          </div>
+          <button type="submit" class="submit-btn">Register</button>
+        </form>
+        <div class="toggle-form">
+          <a href="#" onclick="toggleForm('login')"
+            >Already have an account? Login</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard (initially hidden) -->
+    <div id="dashboard" style="display: none">
+      <nav class="nav-bar">
+        <div class="logo">AI Mentor</div>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#courses">Courses</a>
+          <a href="#progress">Progress</a>
+          <a href="#" onclick="logout()">Logout</a>
+        </div>
+      </nav>
+      <div class="dashboard-content">
+        <!-- Content will be loaded dynamically -->
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
